@@ -3,12 +3,12 @@
 # Create a go runtime suitable for building and testing kfctl
 ARG GOLANG_VERSION=1.13.7
 FROM golang:$GOLANG_VERSION as builder
-ENV CLOUDSDK_PYTHON=python3
+ENV CLOUDSDK_PYTHON=python3.8
 ARG BRANCH=master
 ARG REPO=https://github.com/kubeflow/kubeflow
 
 RUN apt-get update
-RUN apt-get install -y git unzip jq vim
+RUN apt-get install -y git unzip jq vim python3.8
 
 # junit report is used to conver go test output to junit for reporting
 RUN go get -u github.com/jstemmer/go-junit-report
