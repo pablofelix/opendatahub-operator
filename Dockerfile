@@ -3,7 +3,7 @@
 # Create a go runtime suitable for building and testing kfctl
 ARG GOLANG_VERSION=1.13.7
 FROM golang:$GOLANG_VERSION as builder
-ENV CLOUDSDK_PYTHON=python3.8
+ENV CLOUDSDK_PYTHON=python3
 ARG BRANCH=master
 ARG REPO=https://github.com/kubeflow/kubeflow
 
